@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext} from 'react';
+import { BsXCircleFill } from "react-icons/bs";
 
 const PopupForm = () => {
   const [showPopup, setShowPopup] = useState(false);
@@ -12,7 +13,7 @@ const PopupForm = () => {
     if (!isFormSubmitted) {
       const timer = setTimeout(() => {
         setShowPopup(true);
-      }, 2000);
+      }, 4000);
 
       return () => clearTimeout(timer); 
     }
@@ -33,8 +34,13 @@ const PopupForm = () => {
     showPopup && (
       <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 z-50">
         <div className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center">
+        <button 
+        className='ml-auto m-2'
+        onClick={handleSubmit}>
+             <BsXCircleFill />
+        </button>
           <h2 className='text-center text-2xl font-bold hover:text-gray-500 mb-5'>
-            Enter your Details for personalised experience on GitHub Explorer
+            Enter your Details for personalised experience <br /> on GitHub Explorer
           </h2>
           <form className="p-6 flex flex-col items-center" onSubmit={handleSubmit}>
             <label htmlFor="name" className="hidden">

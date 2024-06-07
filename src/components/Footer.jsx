@@ -54,7 +54,7 @@ const Footer = () => {
                         </li>
                         <li>
                             <Link to="/" className="hover:underline">
-                                Discord
+                                Facebook
                             </Link>
                         </li>
                     </ul>
